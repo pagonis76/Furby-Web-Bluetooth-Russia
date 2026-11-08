@@ -306,9 +306,9 @@ async function fetchAndUploadDLC(dlcurl) {
             }
             c++; 
         });
-        msg.ok('DLC uploaded!');
+        msg.ok('DLC загружено!');
     } catch (e) {
-        msg.error('DLC upload failed :(');
+        msg.error('Не удалось загрузить DLC :(');
         log(e.message);
         console.error(e);
         await setAntennaColor(255,0,0);
@@ -323,12 +323,12 @@ async function fetchAndUploadDLC(dlcurl) {
         let filledSlot = slots.indexOf(SLOT_FILLED);
         let activeSlot = slots.indexOf(SLOT_ACTIVE);
         if (filledSlot == -1)
-            throw new Error('Upload failed - no slots filled');
+            throw new Error('скачать не удалась — не заполнено ни одного слота');
         else {
-            log('DLC was uploaded to slot ' + filledSlot);
+            log('DLC было загружено в слот ' + filledSlot);
         }
         if (activeSlot != -1) {
-            log('deactivating old DLC in slot ' + activeSlot);
+            log('деактивация старого слота ' + activeSlot);
             await deactivateDLC(activeSlot)
         }
         
