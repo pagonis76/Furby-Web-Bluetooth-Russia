@@ -2,50 +2,50 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Furby Web Bluetooth</title>
+    <title>Ферби Веб блютуз</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' href='furble.css'>
 </head>
 <body>
 
 <!-- for slide-in status messages -->
-<div id='status' class='ok'>Connected!</div>
+<div id='status' class='ok'>подключённый</div>
 
 <!-- menu button and menu -->
 <button id='hamburger'>☰</button>
 <div id='menu'>
-    <h2>FurBLE but green</h2>
+    <h2>Ферби блютуз</h2>
     <ul>
-        <li><a href='#actions'>Actions</a></li>
-        <li><a href='#misc'>Misc</a></li>
-        <li><a href='#dlc'>DLC Upload</a></li>
-        <li><a href='#sensors'>Sensors</a></li>
-        <li><a href='#debug'>Debug</a></li>
+        <li><a href='#actions'>действия</a></li>
+        <li><a href='#misc'>разное</a></li>
+        <li><a href='#dlc'>скачать DLC</a></li>
+        <li><a href='#sensors'>датчики</a></li>
+        <li><a href='#debug'>отлаживает</a></li>
     </ul>
 </div>
 
 
 <div class='header'>
-        <button id='connbtn' onclick='doConnectDisconnect()'>Connect</button>
-    <div><h1>FurBLE</h1>
-    <span id='state'>Not connected</span></div>
+        <button id='connbtn' onclick='doConnectDisconnect()'>подключиться</button>
+    <div><h1>Ферби Веб блютуз</h1>
+    <span id='state'>не подключено</span></div>
     
 </div>
 
 <div id='furby-buttons'>
 
     <section id='misc'>
-        <h2>Antenna Colour</h2>
+        <h2>Цвет антенны</h2>
         <div class='row'>
-            <button onclick='setAntennaColor(255, 0,0)'>Red</button>
-            <button onclick='setAntennaColor(0, 255,0)'>Green</button>
-            <button onclick='setAntennaColor(0, 0, 255)'>Blue</button>
-            <button onclick='setAntennaColor(255, 255, 255)'>White</button>
+            <button onclick='setAntennaColor(255, 0,0)'>красный</button>
+            <button onclick='setAntennaColor(0, 255,0)'>зелёный</button>
+            <button onclick='setAntennaColor(0, 0, 255)'>синий</button>
+            <button onclick='setAntennaColor(255, 255, 255)'>белый</button>
         </div>
     </section>
 
     <section id='actions'>
-        <h2>Action Sequences</h2>
+        <h2>Экшн-сцены</h2>
         <div class='row' id='dlc-actions'></div>
         <div class='row'>
             <button onclick='triggerAction(39,3,8,1)'>Legendary!</button>
@@ -62,11 +62,11 @@
     </section>
 
     <section id='debug'>
-        <h2>Debug</h2>
+        <h2>отлаживать</h2>
         <div class='row'>
-            <button onclick='cycleDebug()'>Eye Debug</button>
-            <button onclick='enableEyes(false)'>Eyes off</button>
-            <button onclick='enableEyes(true)'>Eyes on</button>
+            <button onclick='cycleDebug()'>глаз Отлаживать</button>
+            <button onclick='enableEyes(false)'>выключить глаза Фёрби</button>
+            <button onclick='enableEyes(true)'>включи глаза Фёрби</button>
         </div>
     </section>
 
@@ -74,29 +74,29 @@
         <h2>DLC Files</h2>
         <div class='row'>
             <select id='dlcname'></select>
-            <button onclick='dlcUploadClicked()'>Upload</button>
+            <button onclick='dlcUploadClicked()'>загрузить</button>
         </div>
         <progress id='dlcprogress'></progress>
     </section>
 
     <section id='sensors'>
-        <h2>Sensors</h2>
+        <h2>датчики</h2>
         <!--<div class='row'>
                 <button onclick='sendGPCmd([0x20, 0x0d])'>Start continuous</button>
                 <button onclick='sendGPCmd([0x20, 0x0e])'>Stop continuous</button>
         </div>
         <h2>State</h2>-->
-        <ul id='sensor-state'><li>Waiting for connection...</li></ul>
+        <ul id='sensor-state'><li>ожидание подключения...</li></ul>
     </section>
 
     <section id='no-web-bluetooth'>
-        <h3>Sorry, this browser doesn't seem to support Web Bluetooth. Works best with Chrome for Android.</h3>
+        <h3>К сожалению, похоже, что этот браузер не поддерживает Web Bluetooth. Лучше всего работает в Chrome для Android.</h3>
     </section>
 </div>
 
 
 <div id="console">
-    <button onclick='log2clipboard()' class='clip'>Copy to Clipboard</button> <h3 onclick='toggleConsole()'>Log Output</h3>
+    <button onclick='log2clipboard()' class='clip'>скопировать в буфер обмена</button> <h3 onclick='toggleConsole()'>вывод лога</h3>
 <div id="out" style="white-space:pre"></div>
 </div>
 
